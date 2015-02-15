@@ -5,13 +5,13 @@ Auto-complete search
 -------------------
 • This is a search tool for Jane, our target user
 
-• When Jane enters text, pops up input suggestion according to her inputs
+• When Jane types into search field, pops up input suggestions according to her inputs
 
-• The suggestions should match the search keywords that she entered
+• Suggestions should match keywords that she entered
 
-• When she selects a suggestion, show the query word as a button
+• When she selects a suggestion, show the keyword as a button
 
-• If she clicks the [X] on the query word button, removes the keyword
+• If she clicks [X] on a query keyword button, removes the keyword
 
 
 Demo site
