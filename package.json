@@ -8,7 +8,7 @@
     "description": "Auto-complete search queries with native javascript",
     "homepage": "",
     "keywords": [],
-    "main": ".server.js",
+    "main": "server.js",
     "scripts": {
         "test": "mocha",
         "smoke_test": "gulp smoke_test",
