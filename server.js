@@ -58,4 +58,5 @@ app.get('/api', function(req, res){
         res.send(D);
     });
 });
-app.listen(3000);
+app.set('port', (process.env.PORT || 3000));
+app.listen(app.get('port'));

@@ -1,49 +1,46 @@
 {
-  "name": "Auto-Complete",
-  "author": {
-    "name": "Azai Chan",
-    "email": "azai.tw@gmail.com"
-  },
-  "version": "0.0.1",
-  "description": "Auto-complete search queries with native javascript",
-  "homepage": "",
-  "keywords": [
-  ],
-  "main": ".server.js",
-  "scripts": {
-      "test": "mocha",
-      "smoke_test": "gulp smoke_test",
-      "build_doc": "gulp build_document",
-      "coverage": "istanbul cover -- _mocha",
-      "lint": "gulp lint"
-  },
-  "directories": {
-    "lib": "lib"
-  },
-  "dependencies": {
-    "express": "4.11.2"
-  },
-  "devDependencies": {
-      "gulp": "3.8.10",
-      "gulp-jshint": "*",
-      "gulp-shell": "0.2.11",
-      "chai": "1.10.0",
-      "istanbul": "0.3.5",
-      "jshint": "2.5.10",
-      "mocha": "2.0.1",
-      "sinon": "1.12.1"
-  },
-  "repository": {
+    "name": "Auto-Complete",
+    "author": {
+        "name": "Azai Chan",
+        "email": "azai.tw@gmail.com"
+    },
+    "version": "0.0.1",
+    "description": "Auto-complete search queries with native javascript",
+    "homepage": "",
+    "keywords": [],
+    "main": ".server.js",
+    "scripts": {
+        "test": "mocha",
+        "smoke_test": "gulp smoke_test",
+        "build_doc": "gulp build_document",
+        "coverage": "istanbul cover -- _mocha",
+        "lint": "gulp lint"
+    },
+    "dependencies": {
+        "express": "4.11.2",
+        "gulp": "3.8.10",
+        "gulp-minify-css": "0.4"
+    },
+    "devDependencies": {
+        "gulp-jshint": "*",
+        "gulp-shell": "0.2.11",
+        "chai": "1.10.0",
+        "istanbul": "0.3.5",
+        "jshint": "2.5.10",
+        "mocha": "2.0.1",
+        "sinon": "1.12.1"
+    },
+    "repository": {
     "type": "git",
     "url": "git://github.com/azaitw/playground.git"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": ""
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": ""
+        }
+    ],
+    "engines": {
+        "node": ">= 0.10.0"
     }
-  ],
-  "engines": {
-    "node": ">= 0.10.0"
-  }
 }
