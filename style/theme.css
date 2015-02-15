@@ -1,0 +1,84 @@
+/* Font */
+html {
+    font-family: Helvetica;
+}
+input[type=text]:focus, textarea:focus {
+    outline: none;
+}
+.C-1 {
+    color: #83baeb;
+}
+.Bgc-0 {
+    background: none;
+}
+.Bgc-1 {
+    background: #B6D1FF;
+}
+.Bgc-2 {
+    background: #ccc;
+}
+.Bgc-3 {
+    background: #fff;
+}
+.Bgc-4 {
+    background: #eee;
+}
+.Bdr-0 {
+    border: 0;
+}
+.Bdr-1 {
+    border: 1px solid #eee;
+}
+.Bdr-2 {
+    border: 1px solid #ccc;
+}
+.Bdr-3 {
+    border: 1px dashed #84A1FF;
+}
+.Bdr-3:hover {
+    background: #84A1FF;
+}
+.Bdr-4 {
+    border: 1px solid #84A1FF;
+}
+.suggestions:before {
+    display: block;
+    content: " ";
+    position: absolute;
+    top: -5px;
+    left: 5px;
+    width: 0;
+    height: 0;
+    border-bottom: 5px solid #eee;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+@-webkit-keyframes webkit-pop {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.5);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.anim-pop {
+    -webkit-animation: webkit-pop 0.2s;
+    -moz-animation: webkit-pop 0.2s;
+    animation-duration: 0.2s;
+    animation-name: pop;
+}
