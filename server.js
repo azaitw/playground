@@ -46,11 +46,9 @@ var processdata = function (callback) {
         });
     });
 };
-app.use('/public', express.static(__dirname + '/public'));
 app.use('/data', express.static(__dirname + '/data'));
-
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/html/index.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 app.get('/api', function(req, res){
     processdata(function (D) {

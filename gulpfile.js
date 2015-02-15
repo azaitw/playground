@@ -9,10 +9,10 @@ var inlinesource = require('gulp-inline-source');
 var uglify = require('gulp-uglify');
 var testCommands = ['cd <%=file.path %>;npm install ../..;npm prune;cp -R ../../node_modules node_modules;npm install;npm run-script disc;npm test'];
 
-gulp.task('build', ['minify-css', 'minify-js']);
+gulp.task('build', ['minify-css', 'minify-js', 'inlinesource']);
 
 gulp.task('minify-css', function() {
-    return gulp.src('./style/*.css')
+    return gulp.src('./source/css/*.css')
     .pipe(concat('production.css'))
     .pipe(minifyCSS(
         {
@@ -23,16 +23,20 @@ gulp.task('minify-css', function() {
     .pipe(gulp.dest('./public/'));
 });
 gulp.task('minify-js', function () {
-    return gulp.src(['js/zaiquery.js', 'js/autocomplete.js'])
+    return gulp.src(['./source/js/zaiquery.js', './source/js/autocomplete.js'])
     .pipe(concat('production.js'))
     .pipe(uglify({mangle: true}))
     .pipe(gulp.dest('./public'));
 });
 
 gulp.task('inlinesource', function () {
-    gulp.src('./index.html')
-        .pipe(inlinesource({swallowErrors: true}))
-        .pipe(gulp.dest('html'));
+    gulp.src('source/html/index.html')
+        .pipe(inlinesource(
+            {
+                swallowErrors: true
+            }
+        ))
+        .pipe(gulp.dest('public'));
 });
 
 gulp.task('lint', function() {

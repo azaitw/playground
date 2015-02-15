@@ -7,7 +7,6 @@ var path = require('path');
 
 var readClientJS = function (filePath) {
     fs.readFile(path.join(__dirname, '../' + filePath), {encoding: 'utf-8'}, function (err, rawData) {
-        console.log('rawData: ', rawData);
         module.export = rawData;
     });
 };
