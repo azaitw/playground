@@ -24,8 +24,7 @@ var processdata = function (callback) {
             if (typeof result[keygroup] === 'undefined') {
                 result[keygroup] = [];
             }
-            placeholder = data[i].city.toLowerCase();
-            placeholder.replace('_', ' ');
+            placeholder = data[i].city.toLowerCase().replace('_', ' ');
             result[keygroup].push(placeholder);
         }
         return result;
@@ -47,10 +46,14 @@ var processdata = function (callback) {
         });
     });
 };
+app.use('/js', express.static(__dirname + '/js'));
+app.use('/style', express.static(__dirname + '/style'));
+app.use('/data', express.static(__dirname + '/data'));
+
 app.get('/', function(req, res){
-    res.send('hi');
+    res.sendFile(__dirname + '/index.html');
 });
-app.get('/processdata', function(req, res){
+app.get('/api', function(req, res){
     processdata(function (D) {
         res.send(D);
     });
