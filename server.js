@@ -49,6 +49,7 @@ var processdata = function (callback) {
 app.use('/data', express.static(__dirname + '/data'));
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/public/index.html');
+//    res.sendFile(__dirname + '/source/html/index.html');
 });
 app.get('/api', function(req, res){
     processdata(function (D) {

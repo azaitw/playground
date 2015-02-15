@@ -92,7 +92,7 @@ var autoComplete = zaiquery.createApp({
         that.dom(function () {
             input.value = '';
             that.updateInputWidth('');
-            that.query('.suggestions')[0].innerText = '';
+            that.clear(that.query('.suggestions')[0]);
         });
         // modify input and add query item
     },
@@ -130,7 +130,7 @@ var autoComplete = zaiquery.createApp({
             var i;
             var bindEvent = function (node) {
                 node.addEventListener('click', function () {
-                    that.addQueryItem(this.innerText);
+                    that.addQueryItem(this.innerText || this.textContent);
                 });
             };
             for (i = 0; i < itemsLen; i += 1) {
@@ -143,6 +143,10 @@ var autoComplete = zaiquery.createApp({
         var inputLen = input.length;
         var width = Math.max(50, inputLen * 10);
         that.attrs.dom.input.style.width = width + 'px';
+    },
+    clear: function (node) {
+        node.innerText = '';
+        node.textContent = '';
     },
     bindAutoCompleteEvent: function (inputField) {
         var that = this;
@@ -159,9 +163,9 @@ var autoComplete = zaiquery.createApp({
                 if (input !== '') {
                     that.generateSuggestionsHtml(input);
                     that.updateInputWidth(input);
-                    that.query('.query-string')[0].innerText = '';
+                    that.clear(that.query('.query-string')[0]);
                 } else {
-                    that.query('.suggestions')[0].innerText = '';
+                    that.clear(that.query('.suggestions')[0]);
                 }
             }
         });
@@ -185,6 +189,7 @@ var autoComplete = zaiquery.createApp({
             queryString += '&' + escape(queryArray[i]);
         }
         queryStringHtml.innerText = queryString;
+        queryStringHtml.textContent = queryString;
     },
     cacheDom: function () {
         this.attrs.dom.input = this.query('.ac-input')[0];
