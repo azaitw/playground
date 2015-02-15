@@ -11,19 +11,24 @@
     "main": "server.js",
     "scripts": {
         "test": "mocha",
+        "build": "gulp build",
+        "inline": "gulp inlinesource",
         "smoke_test": "gulp smoke_test",
-        "build_doc": "gulp build_document",
         "coverage": "istanbul cover -- _mocha",
         "lint": "gulp lint"
     },
     "dependencies": {
         "express": "4.11.2",
+        "gulp-shell": "0.2.11",
         "gulp": "3.8.10",
-        "gulp-minify-css": "0.4"
+        "gulp-minify-css": "0.4",
+        "gulp-concat": "*",
+        "gulp-uglify": "*",
+        "gulp-inline-source": "*",
+        "gulp-smoosher": "*"
     },
     "devDependencies": {
         "gulp-jshint": "*",
-        "gulp-shell": "0.2.11",
         "chai": "1.10.0",
         "istanbul": "0.3.5",
         "jshint": "2.5.10",

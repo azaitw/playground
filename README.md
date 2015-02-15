@@ -8,3 +8,8 @@ Auto-complete search
 • The suggestions should match the search keywords that she entered
 • When she selects a suggestion, show the query word as a button
 • If she clicks the [X] on the query word button, removes the keyword
+
+
+Demo site
+-------------------
+https://azaitw.herokuapp.com/

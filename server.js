@@ -46,12 +46,11 @@ var processdata = function (callback) {
         });
     });
 };
-app.use('/js', express.static(__dirname + '/js'));
-app.use('/style', express.static(__dirname + '/style'));
+app.use('/public', express.static(__dirname + '/public'));
 app.use('/data', express.static(__dirname + '/data'));
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/html/index.html');
 });
 app.get('/api', function(req, res){
     processdata(function (D) {
